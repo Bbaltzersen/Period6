@@ -1,4 +1,4 @@
-# PhoneApp
+# Period6
 
 *Explain the concept of Hybrid Mobile App Development*
 
