@@ -12,4 +12,16 @@ Pros
 - Takes less time (You don't have to bother with the diffrent languages)
 - Cost (By taking less time, it can save money in the end)
 Cons
-- The efficiency / stability (  
+- The efficiency (The performance of the native apps are faster than the hybrid ones)
+- The user experience can suffer because of the restrictions the emulations have.
+
+*Explain about the "building blocks" involved in an ionic Hybrid Application*
+
+When coding hybrid apps with ionic, you use HTML5, CSS and Javascript.
+
+*Explain and demonstrate ways to debug Hybrid Mobile Applications Running on a real device*
+
+*Explain when and why CORS is a problem for Hybrid Mobile Applications*
+
+
+
