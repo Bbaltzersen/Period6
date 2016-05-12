@@ -1,9 +1,9 @@
 // Ionic Starter App
-
+'use strict';
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'ngCordova'])
+angular.module('starter', ['ionic', 'ngCordova', 'starter.services', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -25,29 +25,16 @@ angular.module('starter', ['ionic', 'ngCordova'])
 
   $stateProvider
     .state('map', {
-      url: '/',
+      url: '/map',
       templateUrl: 'templates/map.html',
       controller: 'MapCtrl'
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
     });
 
-  $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise("/login");
 
-}).controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
-  var options = {timeout: 10000, enableHighAccuracy: true};
-
-  $cordovaGeolocation.getCurrentPosition(options).then(function(position){
-
-    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-    var mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-  }, function(error){
-    console.log("Could not get location");
-  });
-});
+})
